@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Application Form{% endblock %}
+
+{% block content %}
+
+
+<!-- your html goes here -->
+
+    <h1>Join us today.</h1>
+    <h3><p class=round>The first step in joining us is letting us know that you want to. Simple, right?<br>
+    Just fill out the form below to tell us what you're looking for.</p></h3>
+     
+      <br>
+
+<form>
+      <form action="/application-success" method="POST">
+        
+        First Name: <input type="text" name="first_name">
+        Last Name: <input type="text" name="last_name" class= "important">
+      
+      <br>
+
+        Salary Requirement: 
+          <input type="radio" name="salary" value="40-59">40-59k/yr.
+          <input type="radio" name="salary" value="60-79">60-79k/yr.
+          <input type="radio" name="salary" value="80-99">80-99k/yr.
+          <input type="radio" name="salary" value="100-119">100k-119/yr.
+          <input type="radio" name="salary" value="120+">120+/yr.
+
+      <br>
+
+
+<!--         {{% for option in job_selection %}} -->
+<!-- not sure what form input the instructions want a jinja for loop for? -->
+<!-- http://jinja.pocoo.org/docs/2.9/templates/ -->
+
+        Applying for:
+          <select name="job">
+            <option value="select-one">Select One</option>
+            <option value="software_engineer">Software Engineer</option>
+            <option value="qa_engineer">QA Engineer</option>
+            <option value="product_manager">Product Manager</option>
+          </select>
+      
+      
+      <br>
+      
+        Best time to reach you: 
+          <input type="checkbox" name="time" value="morning">Morning
+          <input type="checkbox" name="time" value="afternoon">Afternoon
+          <input type="checkbox" name="time" value="evening">Evening
+          <input type="checkbox" name="time" value="weekend">Weekend
+          <input type="checkbox" name="time" value="weekday">Weekday
+
+      
+      
+      <br>
+      
+      
+        Select your favorite color: 
+          <input type="color" name="favcolor">
+      <br>
+      
+        <input type="submit">
+      </form>
+</div>
+{% endblock %}
